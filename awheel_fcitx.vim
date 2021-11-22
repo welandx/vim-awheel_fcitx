@@ -9,9 +9,9 @@
 
 let s:chinese_enable = 2                                     "若当前系统为中文输入法,则获取的输入法状态值为 2
 let s:english_enable = 1                                     "若当前系统为英文输入法,则获取的输入法状态值为 1
-let s:get_fcitx_language_status = "fcitx-remote"             "获取当前输入法的状态值
-let s:set_fcitx_chinese         = "fcitx-remote -o"          "把输入法设置为 中文
-let s:set_fcitx_english         = "fcitx-remote -c"          "把输入法设置为 英文
+let s:get_fcitx_language_status = "fcitx5-remote"             "获取当前输入法的状态值
+let s:set_fcitx_chinese         = "fcitx5-remote -o"          "把输入法设置为 中文
+let s:set_fcitx_english         = "fcitx5-remote -c"          "把输入法设置为 英文
 
 let s:start_language_status = system(s:set_fcitx_english)    "vim启动时,默认把输入法设置为英文
 
