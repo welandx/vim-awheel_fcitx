@@ -28,7 +28,7 @@ autocmd BufNewFile,BufRead *.txt,*.text,[Rr][Ee][Aa][Dd][Mm][Ee]
 function! s:fcitx_2_english()
 	let s:exit_insert_status = system(s:get_fcitx_language_status)      "检查退出 插入模式 时,输入法的状态
 	if s:exit_insert_status != s:english_enable                         "如果退出 插入模式 时,输入法不是英文
-		let s:temp = system(s:set_fcitx_english)                        "将输入法设置为英文
+		let l:temp = system(s:set_fcitx_english)                        "将输入法设置为英文
 	endif
 	let g:saved_insert_mode_language_status = s:exit_insert_status      "保存退出 插入模式 时的输入法状态 
 endfunction
@@ -38,9 +38,9 @@ function! s:fcitx_enter_insert_mode()
 	let s:enter_insert_status = system(s:get_fcitx_language_status)     "获取进入 插入模式 时,输入法的状态
 	if s:enter_insert_status != g:saved_insert_mode_language_status     "如果当前输入法语言和上一次退出插入模式时的语言不一样
 		if g:saved_insert_mode_language_status == s:chinese_enable      "改变输入法当前语言为上一次退出插入模式时的语言
-			let s:temp = system(s:set_fcitx_chinese)
+			let l:temp = system(s:set_fcitx_chinese)
 		else
-			let s:temp = system(s:set_fcitx_english)
+			let l:temp = system(s:set_fcitx_english)
 		endif
 	endif
 endfunction
